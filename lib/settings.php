@@ -33,7 +33,7 @@ class OBJSPACEBACKUPSET {
     public static function add_settings_page() {
         load_plugin_textdomain(objspacebackup, OBJSPACEBACKUP_PLUGIN_DIR . 'i18n', 'i18n');
         add_action('admin_init', array('OBJSPACEBACKUPSET', 'add_register_settings'));
-        add_menu_page(__('ObjSpace Settings', 'objspacebackup'), __('ObjSpace', 'objspacebackup'), 'manage_options', 'objspacebackup-menu', array('OBJSPACEBACKUPSET', 'settings_page'), 'dashicons-backup' );
+        add_menu_page(__('ObjSpace Settings', 'objspacebackup'), __('ObjSpaceBackup', 'objspacebackup'), 'manage_options', 'objspacebackup-menu', array('OBJSPACEBACKUPSET', 'settings_page'), 'dashicons-backup' );
         
         if ( get_option('objspacebackup-key') && get_option('objspacebackup-secretkey') ) {
             add_submenu_page('objspacebackup-menu', __('Backups', 'objspacebackup'), __('Backups', 'objspacebackup'), 'manage_options', 'objspacebackup-menu-backup', array('OBJSPACEBACKUPSET', 'backup_page'));  
